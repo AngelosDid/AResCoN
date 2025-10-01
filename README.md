@@ -38,7 +38,37 @@ If you aren't using planes from small multistacks and are only interested in fil
   <img src="https://github.com/user-attachments/assets/aa93acc5-e427-456e-981d-6b21afbce24c" width="700">
 </p>
 
-## Step 4 (Create Main Folder)
+After you ensure that the architecture is correct, open the AResCoN code folder with VS code and run the Multiplane_cell_detection17.py. A GUI window will open. Click at the Measure Rois tab, then click at the Find fiji.exe button and locate the ImageJ.exe file that is provided in the first release of this repository.
 
-Create a main folder (e.g. Input
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b154d915-9711-4233-a2c0-6dcb52e31935" width="700">
+</p>
+
+Then navigate to the ChangeROIs tab and click the 'Convert Labels to ROIs' button. You will be prompted to select the main ROI folder that contains all subdirectories comprising the mask .tif outputs at this stage. 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e389f919-0fa4-4466-b6c2-ce3e63fc65da" width="400">
+</p>
+
+Let Fiji run completely uninterrupted. It will open and close as many times as your maximum plane number.
+
+At present, there is no messagebox appearing to inform you that the process is complete. Wait a few seconds and a new folder named RoisFromLabels will be created inside your main ROI folder, along with your subdirectories.
+
+## Step 4 (Create Main Folder with Images and Rois)
+
+Create a main folder (e.g. Input) and paste your main Images Folder that contains all planeN subdirectories inside it. Locate the main ROIsFromLabels folder that includes all the newly created subdirectories that now contain .zip files instead of .tif masks. 
+
+You can find the RoisFromLabels folder inside the subdirectories of the main ROIs folder. Paste the RoisFromLabels folder inside your main Input folder. Preferably, rename the RoisFromLabels folder to Rois_folder.
+
+## Step 5 (Set the right Fiji measurements)
+
+In Fiji Menu bar type 'set measurements' and make sure those measurements are selected : 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/afe4b992-15e6-4836-b3a6-81cb9ae01a51" height="400">
+</p>
+
+
+
+
 
