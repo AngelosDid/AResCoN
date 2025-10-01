@@ -131,15 +131,50 @@ Steps 7,8 and 9 in one image :
 
 
 
-## Step 10 (Filter images on XY axis) :
+## Step 10 (Get Relative background of each ROI) :
 
-Find the 2D filter tab and type a ROI enlargement factor (I like values between 30 to 50). Locate the autoenter.ahk inside the AResCoN code folter and select it after pressing the 'Locate .ahk' button. After installing the AutoHotKeysUX, press the 'Locate' .exe button and select the executable file of AutoHotKeysUX 
+Find the 2D filter tab and type a ROI enlargement factor (I like values between 30 to 50). Locate the autoenter.ahk inside the AResCoN code folter and select it after pressing the 'Locate .ahk' button. After installing the AutoHotKeysUX, press the 'Locate' .exe button and select the executable file of AutoHotKeysUX.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/268a805b-a9fb-4686-b0fa-0ec25dbd250b" height="350">
+  <img src="https://github.com/user-attachments/assets/268a805b-a9fb-4686-b0fa-0ec25dbd250b" width = 550 height="350">
 </p>
 
+Click on 'Get Roi-Background mean gray differences'. You will be asked to select an empty folder where some masks will be saved. These can be used later for some sanity checks. 
 
+Let Fiji run uninterruptedly like step 6. This step will take longer than step 6 and 8. How much longer? This really depends on the number of ROIs that each image has. It might take a couple of minutes -or more- per plane for images with many thousands of ROIs.
+
+Eventually, two more columns will be added to each csv file inside the subdirectories of the save folder, where your main measurements are stored. The most important new column is the SurroundingMean, which is the relative background of each corresponding ROI. This background **DOES NOT** take into account pixel values of other ROIs falling under this enlarged region. It also does not take into account the real black background behind the tissue, which is adjacent to neurons that lay in the very outrer cortical parts.
+
+
+
+## Step 11(Filter ROIs in XY axis) 
+
+
+
+You can make your own ROI filters by inserting conditions based on the metrics/measurements that are included in your csv files. For instance, you can exclude all ROIs that are less than 30% brighter than their background by typing (Mean>SurroundingMean*1.3). You can include any other condition (always inside parenthesis that you want, as long as you don't repeat the name of a metric inside the same condition). If any of the conditions is violated, the ROI will be filtered out.
+
+💡 IMPORTANT : The ROIs that displayed NaN value during the calculation of the relative background have artificially been given the value 0.000001 under the SurroundingMean column. These are mostly erroneuous ROIs detected outside the tissue, somewhere in the black background of the image. It is **highly** recommended to also add the (SurroundingMean>0.000001) condition in the filters, to ensure that no such ROIs will be included in your final set.
+
+There is a catch here though: When we converted masks to ROIs (step3) any contingent spatial gap between overlapping ROIs is now lost. This means that if a neurons is **completely** surrounded by other neurons throughout the whole range of its enlarged form (see step 10), then there will be no unmasked pixel values to calculate the SurroundingMean. This will erroneously lead to a 0.000001 value. This is naturally almost impossible, however, Cellpose makes some really false predictions from time to time which occupy a very large space in the image. The indicated by the red arrow cell in the example below will be 'trapped' and might erroneously acquire a NaN -> 0.000001 value. 
+
+Therefore, in future versions a pre-filtering step will be applied so that very large objects are excluded in the first place. The exclusion of large objects directly during inferences is tricky when using cellpose, because it is based on a percentage of the mask's size compared to the size of the image instead of a raw value of pixels. 
+
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c9c07a2b-1ced-4733-bac2-d0df6e50e271" height="350" width="350">
+</p>
+
+Click on 'Apply filters' and you will be prompted to select an empty folder where two directories will be saved, namely the accepted and the rejected. The rejected folder comprises as many directories as your filtering conditions, so that you can see which condition was violated by a particular ROI.
+
+Make sure you agree to create a .pkl file. You will later need this for Zfiltering.
+
+
+
+##Step 12 (Z-axis filtering)
+
+Navigate to Zfilter tab and press 'Apply filters'. Then select your newly created Accepted_Rois.pkl file. The default values should work well for a precise detection of the crispest version of a neuron (the plane of origin is indicated in the end of the ROI name, e.g. 001_132-4. '-4' indicates that the selected crispest 'version' of the neuron originates from plane4. The vast majority of cells or nuclei should be detected correct. 
+
+So far, I have detected a few negligible cases where some false positives survive the filtering, thereby leading to erroneous 'double' detection of a neuron. You can easily investigate yourself by overlaying the rois in the image. Notwithstanding that there will probably be no reason for tweaking the filtering values, you can refer to the decisiontree.pptx inside the AResCoN code and see which value corresponds to each step of the designed algorithm. I will provide a more descriptive explanation about this in the future.
 
 
 
