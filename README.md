@@ -170,7 +170,7 @@ Make sure you agree to create a .pkl file. You will later need this for Zfilteri
 
 
 
-##Step 12 (Z-axis filtering)
+## Step 12 (Z-axis filtering)
 
 Navigate to Zfilter tab and press 'Apply filters'. Then select your newly created Accepted_Rois.pkl file. The default values should work well for a precise detection of the crispest version of a neuron (the plane of origin is indicated in the end of the ROI name, e.g. 001_132-4. '-4' indicates that the selected crispest 'version' of the neuron originates from plane4. The vast majority of cells or nuclei should be detected correct. 
 
