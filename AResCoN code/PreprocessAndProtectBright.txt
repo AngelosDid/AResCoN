@@ -1,0 +1,62 @@
+// This code changes the contrast and the gamma of an image, except for its already bright parts (as set in threshold)
+
+setBatchMode(false);
+// 1. Start with your original image
+original_title = getTitle();
+
+// 2. Create gamma-corrected version
+run("Duplicate...", "title=gamma_corrected");
+selectWindow("gamma_corrected");
+run("Enhance Local Contrast (CLAHE)", "blocksize=127 histogram=1024 maximum=6 mask=*None*"); // This helps to maintain smaller contours
+
+run("Gamma...", "value=5"); // Adjust gamma as needed
+
+// 3. Go back to original and create mask
+selectWindow(original_title);
+run("Duplicate...", "title=mask");
+// Set your threshold to select bright areas you want to PROTECT
+run("Threshold...");
+// Adjust threshold to select bright regions, then:
+setThreshold(930, 65535); // Example: protect very bright pixels
+run("Convert to Mask");
+
+// 4. Create selection from MASK (this selects the bright areas)
+run("Create Selection");
+
+// 5. Now INVERT the selection (so we select the areas we WANT to modify)
+run("Make Inverse");
+
+// 6. Add the selection to the ROI Manager
+roiManager("Add");
+
+// 7. Now, we want to copy the pixels from the gamma_corrected image (in the selected area) to the original image
+// First, select the gamma_corrected image
+selectWindow("gamma_corrected");
+
+// 8. Restore the selection from ROI Manager
+roiManager("Select", 0);
+
+// 9. Copy the selected area from the gamma_corrected image
+run("Copy");
+
+// 10. Select the original image and paste
+selectWindow(original_title);
+roiManager("Select", 0);
+run("Paste");
+
+// 11. Clean up the ROI Manager and close the mask window
+roiManager("Delete");
+selectWindow("mask");
+close();
+selectWindow("gamma_corrected");
+close();
+selectWindow(original_title);
+
+// Specify the full path where you want to save the image
+savePath = "C:/Users/angdid/Desktop/converted/" + original_title + ".tif";
+
+// Save the image as a TIFF file
+saveAs("Tiff", savePath);
+roiManager ("Reset");
+run("Fresh Start");
+

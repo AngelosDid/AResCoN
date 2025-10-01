@@ -1,0 +1,2 @@
+the mytools folder needs to be places inside the plugins folder of fiji.
+This file must be deleted then.
