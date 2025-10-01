@@ -186,5 +186,7 @@ The final zip file contains ROIs that originate from all possible planes, mainta
 
 
 
+
+## 
 AResCoN has been created solely by Angelos Didachos, a 4th-year PhD Candidate in Neuroscience. I am finishing my PhD in a few months and then actively looking for a job in Australia. Kindly cite my work if you are planning to use AResCoN by citing the github page. If you are interested in detection of animal freezing behaviors, check out my other repository, namely EasyFreezy, which utilizes Deeplabcut output to detect reliable freezing spans.
 
