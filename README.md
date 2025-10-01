@@ -177,4 +177,6 @@ Navigate to Zfilter tab and press 'Apply filters'. Then select your newly create
 So far, I have detected a few negligible cases where some false positives survive the filtering, thereby leading to erroneous 'double' detection of a neuron. You can easily investigate yourself by overlaying the rois in the image. Notwithstanding that there will probably be no reason for tweaking the filtering values, you can refer to the decisiontree.pptx inside the AResCoN code and see which value corresponds to each step of the designed algorithm. I will provide a more descriptive explanation about this in the future.
 
 
+# Final zip file
 
+The final zip file contains ROIs that originate from all possible planes, maintaining only the crispest version of each neuron, thereby allowing you to capture all neurons that could possibly be visible!
