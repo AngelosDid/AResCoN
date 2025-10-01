@@ -115,5 +115,31 @@ Go to the 'Add Metrics' Tab and click on Add measurements. You can also click on
 
 
 
+## Step 8 (Get the standard deviation ROIs after FindEdges)
+
+Click on 'Find edges StdDev' and let Fiji run, like you did in step 6. You will be notified by a messagebox in the end and a new folder containing the new measurements based on FindEdges will be created inside the Input folder.
+
+## Step 9 (Add FindEdges stdev in main measurements)
+
+Click on Add edges StdDev. This will results in the addition of a column in each one of your csv files inside the main folder. Then click again on 'Add measurements' to insert the new information to AResCoN. 
+
+Steps 7,8 and 9 in one image :
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ec2f6f2e-44cb-41a3-b124-5553b55215b2" height="500" width="500">
+</p>
+
+
+
+## Step 10 (Filter images on XY axis) :
+
+Find the 2D filter tab and type a ROI enlargement factor (I like values between 30 to 50). Locate the autoenter.ahk inside the AResCoN code folter and select it after pressing the 'Locate .ahk' button. After installing the AutoHotKeysUX, press the 'Locate' .exe button and select the executable file of AutoHotKeysUX 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/268a805b-a9fb-4686-b0fa-0ec25dbd250b" height="350">
+</p>
+
+
+
 
 
