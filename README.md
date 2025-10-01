@@ -16,5 +16,8 @@ AResCoN is particularly useful in setups where complete imaging of a slice (hemi
 
 ## Step 1 
 
-Run Cellpose inferences and paste the .tif mask output to a ROIs_folder with plane subdirectories
+Run Cellpose inferences and paste the .tif mask output to a ROIs_folder with planeN subdirectories
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aa93acc5-e427-456e-981d-6b21afbce24c" width="700">
+</p>
