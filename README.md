@@ -181,11 +181,11 @@ So far, I have detected a few negligible cases where some false positives surviv
 
 The final zip file contains ROIs that originate from all possible planes, maintaining only the crispest version of each neuron, thereby allowing you to capture all neurons that could possibly be visible throughout your whole tissue!
 
-
 <img width="2253" height="656" alt="final" src="https://github.com/user-attachments/assets/79b63fce-4f52-4d91-924d-e78df82ccb08" />
 
+# Final results on Youtube
 
-
+https://youtu.be/fQPcCw8j4ls?t=5792
 
 ## 
 AResCoN has been created solely by Angelos Didachos, a 4th-year PhD Candidate in Neuroscience. I am finishing my PhD in a few months and then actively looking for a job in Australia. Kindly cite my work if you are planning to use AResCoN by citing the github page. If you are interested in detection of animal freezing behaviors, check out my other repository, namely EasyFreezy, which utilizes Deeplabcut output to detect reliable freezing spans.
