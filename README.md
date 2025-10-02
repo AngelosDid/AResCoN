@@ -121,7 +121,7 @@ Click on 'Find edges StdDev' and let Fiji run, like you did in step 6. You will 
 
 ## Step 9 (Add FindEdges stdev in main measurements)
 
-Click on Add edges StdDev. This will results in the addition of a column in each one of your csv files inside the main folder. Then click again on 'Add measurements' to insert the new information to AResCoN. 
+Click on Add edges StdDev. This will lead to the addition of a column in each one of your csv files inside the main folder. Then click again on 'Add measurements' to insert the new information to AResCoN. 
 
 Steps 7,8 and 9 in one image :
 
@@ -151,9 +151,9 @@ Eventually, two more columns will be added to each csv file inside the subdirect
 
 
 
-You can make your own ROI filters by inserting conditions based on the metrics/measurements that are included in your csv files. For instance, you can exclude all ROIs that are less than 30% brighter than their background by typing (Mean>SurroundingMean*1.3). You can include any other condition (always inside parenthesis that you want, as long as you don't repeat the name of a metric inside the same condition). If any of the conditions is violated, the ROI will be filtered out.
+You can make your own ROI filters by inserting conditions based on the metrics/measurements that are included in your csv files. For instance, you can exclude all ROIs that are less than 30% brighter than their background by typing (Mean>SurroundingMean*1.3). You can include any other condition (always inside parenthesis) that you want, as long as you don't repeat the name of a metric inside the same condition. If any of the conditions is violated, the ROI will be filtered out.
 
-💡 IMPORTANT : The ROIs that displayed NaN value during the calculation of the relative background have artificially been given the value 0.000001 under the SurroundingMean column. These are mostly erroneuous ROIs detected outside the tissue, somewhere in the black background of the image. It is **highly** recommended to also add the (SurroundingMean>0.000001) condition in the filters, to ensure that no such ROIs will be included in your final set.
+💡 IMPORTANT : The ROIs that displayed NaN value during the calculation of the relative background have artificially been given the value 0.000001 under the SurroundingMean column. These are mostly false ROIs detected outside the tissue, somewhere in the black background of the image. It is **highly** recommended to also add the (SurroundingMean>0.000001) condition in the filters, to ensure that no such ROIs will be included in your final set.
 
 There is a catch here though: When we converted masks to ROIs (step3) any contingent spatial gap between overlapping ROIs is now lost. This means that if a neurons is **completely** surrounded by other neurons throughout the whole range of its enlarged form (see step 10), then there will be no unmasked pixel values to calculate the SurroundingMean. This will erroneously lead to a 0.000001 value. This is naturally almost impossible, however, Cellpose makes some really false predictions from time to time which occupy a very large space in the image. The indicated by the red arrow cell in the example below will be 'trapped' and might erroneously acquire a NaN -> 0.000001 value. 
 
