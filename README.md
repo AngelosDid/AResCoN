@@ -14,6 +14,16 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
   
 * An installation of AutoHotKeysUX is necessary.
 
+
+## Step 0 (Getting ready)
+
+Install Anaconda or Miniconda. Open the Anaconda prompt, locate the directory where the AResCoN_dependencies.yaml file is. Then type:  
+```bash
+conda env create -f AResCoN_dependencies.yaml
+```
+
+
+
 ## Step 1 (Get independent planes)
 
 Use the 'Stack to Images' ImageJ function and save separately each plane. Images **must end** to _plane1.tif, _plane2.tif and so on. Make sure that each plane includes only a single channel.
