@@ -4,6 +4,9 @@ AResCoN is a pipeline developed to perform accurate filtering of cells or nuclei
 AResCoN is particularly useful in setups where complete imaging of a 2D slice (one hemishpere or both) is required but it can also be used for isolated regions within a 2D slice. 
 
 ## 📋 Prerequisites
+
+* At present, AResCoN only works on Windows. Kindly ignore the Linux option.
+
 * AResCoN works optimally with **16-bit** images and has been tested so far only with 20x magnified captures. 8-bit images and lower or higher magnifications are likely to work too.
   
 * AResCoN has only be tested with .tif images. Different channels must be tested separately. 
