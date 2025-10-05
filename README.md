@@ -62,7 +62,7 @@ After you ensure that the architecture is correct, open the AResCoN code folder 
 
 Click at the Microscopy tab and make sure that the number of zplanes corresponds to your maximum z-plane. 
 
-⚠️ Disclaimer:  It is not guaranteed that Cellpose can run successfuly if you have images consisted of a different number of planes. This is something that will be tested soon. Therefore, it is strongly recommended to ensure that all your test files have an equal number of planeN images at this point. 
+⚠️ Disclaimer:  It is not guaranteed that AResCoN can run successfuly if you have images consisted of a different number of planes. This is something that will be tested soon. Therefore, it is strongly recommended to ensure that all your test files have an equal number of planeN images at this point. 
 
 You can also adjust now the bit depth (recommended to use 16-bit images) and the system, which **must** be Windows.
 
