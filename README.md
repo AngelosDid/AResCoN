@@ -90,7 +90,7 @@ Let Fiji run completely uninterrupted. It will open and close as many times as y
 
 At present, there is no messagebox appearing to inform you that the process is complete. Wait a few seconds and a new folder named RoisFromLabels will be created inside your main ROI folder, along with your subdirectories.
 
-⚠️ Warning: Sometimes, hidden desktop.ini files might be included inside your Images or ROIs folders. This bug was discovered recenently and hasn't been fixed yet. It is recommended to navigate to your main Images and ROIs folders from cmd and delete any possible hidden desktop.ini files.
+⚠️ Warning: Sometimes, hidden desktop.ini files might be included inside your Images or ROIs folders. This bug was discovered recently and hasn't been fixed yet. It is recommended to navigate to your main Images and ROIs folders from cmd and delete any possible hidden desktop.ini files.
 
 ```bash
 cd "C:\Users\YourAccount\Desktop\Images OR ROIs folder"
