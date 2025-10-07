@@ -19,7 +19,7 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
 
 * Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji.
   
-* An installation of AutoHotKeysUX is necessary.
+* An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one)
 
 
 ## Step 0 (Getting ready)
