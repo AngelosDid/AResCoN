@@ -5,6 +5,8 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
 
 ## 📋 Prerequisites
 
+* A primary output of Cellpose (recommended) or Stardist is required. You can find notebooks for training/predictions on Cellpose github page. A notebook for predictions is also attached here.
+
 * At present, AResCoN only works on Windows. Kindly ignore the Linux option.
 
 * AResCoN works optimally with **16-bit** images and has been tested so far only with 20x magnified captures. 8-bit images and lower or higher magnifications are likely to work too.
@@ -50,7 +52,7 @@ Create a main Rois_Folder and then create as many planeN_Images subdirectories a
 
 Run Cellpose inferences and paste each .tif mask output to the respective planeN subdirectory of a main ROIs folder. For instance, if there are 2 multistacks of brain a and brain b, both comprising 5 planes, plane1_ROIs must contain a_plane1.tif and b_plane1.tif, plane2_ROIs must contain a_plane2.tif and b_plane2.tif and so on.
 
-The names of the .tif masks must be **identical** to the names of the initial _planeN.tif images. The provided Cellpose notebook adds an additional _predicted_mask to each mask output name. Remove this additional part from all images. 
+The names of the .tif masks must be **identical** to the names of the initial _planeN.tif images. The provided Cellpose notebook will add an additional _predicted_mask to each mask output name (unless you remove it directly from the notebook). Remove this additional "_predicted_mask" part from all images. You can do this from cmd or much more easily with tools like PowerRename.
 
 If you aren't using planes from small multistacks and are only interested in filtering single shots, place all your .tif output masks inside the plane1_Rois subdirectory of the main ROIs folder.
 
