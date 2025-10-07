@@ -17,7 +17,7 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
 
 * AResCoN hasn't been tested yet with multistack images comprising more than 9 planes. It also hasn't been tested yet with multistack images comprising a different number of planes (e.g. a multistack of 6 planes and a multistack of 9 planes).
 
-* Please use the Fiji/ImageJ version provided in this repository.
+* Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji.
   
 * An installation of AutoHotKeysUX is necessary.
 
