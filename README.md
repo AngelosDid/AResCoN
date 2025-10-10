@@ -13,7 +13,7 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
   
 * AResCoN has only be tested with .tif images. Different channels must be tested separately. 
   
-* For a complete utilization of its features, it requires images from small multi-stacks (usually comprising up to 10 planes). Due to the wiggly nature of a mounted tissue -as well as the slightly different depth of cells and nuclei populating it- the acquisition of several planes can secure at least one crisp capture of each cell-nucleus across many planes. AReScON can filter out Cellpose predictions that are detected over separate planes and correspond to the same observation.
+* For a complete utilization of its features, it requires images from small multi-stacks (usually comprising up to 10 planes). Due to the wiggly nature of a mounted tissue -as well as the slightly different depth of cells and nuclei populating it or inconsistencies in slice thickness- the acquisition of several planes can secure at least one crisp capture of each cell-nucleus across many planes. AReScON can filter out Cellpose predictions that are detected over separate planes and correspond to the same observation.
 
 * AResCoN hasn't been tested yet with multistack images comprising more than 9 planes. It also hasn't been tested yet with multistack images comprising a different number of planes (e.g. a multistack of 6 planes and a multistack of 9 planes).
 
