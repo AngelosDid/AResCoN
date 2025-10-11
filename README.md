@@ -7,6 +7,8 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
 
 * A primary output of Cellpose (recommended) or Stardist is required. You can find notebooks for training/predictions on Cellpose github page. A notebook for predictions is also attached here.
 
+* The naming of the obtained ROIs must be similar to the ROIs provided in the repository, namely 001_001, 001_002, 001_003 and so on, with the first four characters (001_) being always the same. 
+
 * At present, AResCoN only works on Windows. Kindly ignore the Linux option.
 
 * AResCoN works optimally with **16-bit** images and has been tested so far only with 20x magnified captures. 8-bit images and lower or higher magnifications are likely to work too.
