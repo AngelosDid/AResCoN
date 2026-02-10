@@ -1,5 +1,5 @@
 # A Researcher is Counting Neurons (AResCoN)
-AResCoN is a pipeline developed to perform accurate filtering of cells or nuclei following initial inferences. It uses the output of Cellpose or Stardist and utilizes Fiji to obtain measurements that can be used either for X and Y axis cell filtering or Z-axis cell filtering within a small range of planes.
+AResCoN is a pipeline developed to perform accurate filtering of cells or nuclei following initial network-based inferences. It uses the output of Cellpose or Stardist and utilizes Fiji to obtain measurements that can be used either for X and Y axis cell filtering or Z-axis cell filtering within a small range of planes.
 
 AResCoN is particularly useful in setups where complete imaging of a 2D slice (one hemishpere or both) is required but it can also be used for isolated regions within a 2D slice. 
 
