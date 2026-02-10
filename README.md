@@ -5,21 +5,25 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
 
 ## 📋 Prerequisites
 
-* A primary output of Cellpose (recommended) or Stardist is required. You can find notebooks for training/predictions on Cellpose github page. A notebook for predictions is also attached here.
+* A primary output of Cellpose (recommended) or Stardist (only for no z-axis filtering) is required. You can find notebooks for training/predictions on Cellpose github page. A notebook for predictions is also attached here.
 
-* The naming of the obtained ROIs must be similar to the ROIs provided in the repository, namely 001_001, 001_002, 001_003 and so on. Your ROIs will obtain by default these names if you run the mask to ROI conversion option in AResCoN.
+* The naming of the obtained ROIs must be similar to the ROIs provided in the repository, namely 001_001, 001_002, 001_003 and so on. Your ROIs will obtain by default these names if you run the label (mask) to ROI conversion option in AResCoN.
 
 * At present, AResCoN only works on Windows. Kindly ignore the Linux option.
 
-* AResCoN works optimally with **16-bit** images and has been tested so far only with 20x magnified captures. 8-bit images and lower or higher magnifications are likely to work too.
+* AResCoN works optimally with **16-bit** images and has been tested so far only with 20x magnified captures. 8-bit images and lower or higher magnifications are likely to work too, as long as your dataset is homogenous.
   
-* AResCoN has only be tested with .tif images. Different channels must be tested separately. 
+* AResCoN has only be tested with .tif (and .tiff) images.
   
-* For a complete utilization of its features, it requires images from small multi-stacks (usually comprising up to 10 planes). Due to the wiggly nature of a mounted tissue -as well as the slightly different depth of cells and nuclei populating it or inconsistencies in slice thickness- the acquisition of several planes can secure at least one crisp capture of each cell-nucleus across many planes. AReScON can filter out Cellpose predictions that are detected over separate planes and correspond to the same observation.
+* AResCon receives only one channel input at at time. If you have more than one channels, you should run each separately.
+  
+* For a complete utilization of its features, it requires images from small multi-stacks (usually comprising up to 10 planes). Due to the (1) wiggly nature of a mounted tissue (2) the slightly different depth of cells and nuclei populating it (3) inconsistencies in slice thickness- the acquisition of several planes can secure at least one crisp capture of each cell-nucleus across many planes. AReScON can filter out Cellpose predictions that are detected over separate planes and correspond to the same observation. 
 
-* AResCoN hasn't been tested yet with multistack images comprising more than 9 planes. It also hasn't been tested yet with multistack images comprising a different number of planes (e.g. a multistack of 6 planes and a multistack of 9 planes).
+* AResCoN has recently been fixed to accomodate multistack images comprising more than 9 planes. It is now also able to process multistack images comprising a different number of planes (e.g. a multistack of 6 planes and a multistack of 12 planes).
+  
+* The steps that include openning of Fiji require that you do not press your keyboard or move your mouse. Therefore, it is recommended that you don't run AResCoN in your main desktop.
 
-* Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji.
+* Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji. Other versions will probably not work unless you adjust the number of tab presses in the pyautogui in all modules where fiji is called.
   
 * An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one)
 
@@ -32,11 +36,11 @@ conda env create -f AResCoN_dependencies.yaml
 ```
 
 
-
 ## Step 1 (Get independent planes)
 
 Use the 'Stack to Images' ImageJ function and save separately each plane. Images **must end** to _plane1.tif, _plane2.tif and so on. Make sure that each plane includes only a single channel.
 
+Alternatively, if your original images are multistack AND multichannel images, you can navigate the fiji macros folder inside AResCoN code and use the SeparateMultiplaneForBatchMacro.txt. You can copy its content, open Fiji and go to Process->Batch->Macro. Select as input the directory where all your multistack AND multichannel images are. When the first image opens, you will be requested to indicate a folder where each single-channel/single-plane image will be saved. Your directory has to be structured like that directory/CN/planeN_image where N is the number of your channel (for CN) or plane (for planeN). Therefore, if you have 3 channels and 3 planes, you need to have a C1, C2 and C3 folder; inside of each a plane1_images, plane2_images, plane3_images folder. All CN and planeN directories must be empty (This macro will be incorporated to AResCoN in a new version). 
 
 
 ## Step 2 (Paste images to corresponding planeN folder)
@@ -49,8 +53,14 @@ Create a main Rois_Folder and then create as many planeN_Images subdirectories a
 
 
 
-
 ## Step 3 (Convert masks to ROIs)
+
+⚠️ Warning: Sometimes, hidden desktop.ini files might be included inside your directories. AResCoN is not accounting for these files yet. You can ensure that you directory has no hidden desktop files if you : open file explorer -> click the three dots next to view (Windows 11), -> options -> view -> hide protected operating system files -> delete all desktop.ini files that might be inside every plane folder. Alternatively you can : 
+
+```bash
+cd "C:\Users\YourAccount\Desktop\ROIs folder"
+del /s /a desktop.ini"
+```
 
 Run Cellpose inferences and paste each .tif mask output to the respective planeN subdirectory of a main ROIs folder. For instance, if there are 2 multistacks of brain a and brain b, both comprising 5 planes, plane1_ROIs must contain a_plane1.tif and b_plane1.tif, plane2_ROIs must contain a_plane2.tif and b_plane2.tif and so on.
 
@@ -65,8 +75,6 @@ If you aren't using planes from small multistacks and are only interested in fil
 After you ensure that the architecture is correct, open the AResCoN code folder with VS code and run the Multiplane_cell_detection17.py. A GUI window will open. 
 
 Click at the Microscopy tab and make sure that the number of zplanes corresponds to your maximum z-plane. 
-
-⚠️ Disclaimer:  It is not guaranteed that AResCoN can run successfuly if you have images consisted of a different number of planes. This is something that will be tested soon. Therefore, it is strongly recommended to ensure that all your test files have an equal number of planeN images at this point. 
 
 You can also adjust now the bit depth (recommended to use 16-bit images) and the system, which **must** be Windows.
 
@@ -137,8 +145,7 @@ Read the instructions on the screen first and let Fiji run uninterrupted until i
 
 ## Step 7 (Insert data from save directory into AResCoN)
 
-Go to the 'Add Metrics' Tab and click on Add measurements. You can also click on Save measurements after the procedure is finished. In both cases, you will be notified with a messagebox.
-
+Go to the 'Add Metrics' Tab and click on Add measurements. You can also click on Save measurements after the procedure is finished. In both cases, you will be notified with a messagebox. Depending on the size of your files, this might take time. A (Not Responding) message on the title of the program does not indicate that AResCoN is not running properly, rather that it is still running.
 
 
 ## Step 8 (Get the standard deviation ROIs after FindEdges)
@@ -159,13 +166,15 @@ Steps 7,8 and 9 in one image :
 
 ## Step 10 (Get Relative background of each ROI) :
 
-Find the 2D filter tab and type a ROI enlargement factor (I like values between 30 to 50). Locate the autoenter.ahk inside the AResCoN code folter and select it after pressing the 'Locate .ahk' button. After installing the AutoHotKeysUX, press the 'Locate' .exe button and select the executable file of AutoHotKeysUX.
+⚠️ Warning : This step might differ from the youtube tutorial. Changes have been made to the way this function works in order to minimize processing time.
+
+Find the 2D filter tab and type a ROI enlargement factor (I like a value of 2).  For a value of 2, this factor means that you are taking as a background field the space of a double sized bounding box of each cell of yours. Press the 'Locate .ahk' button and select the autoenter.ahk inside the AResCoN code folder. After installing the AutoHotKeysUX, press the 'Locate' .exe button and select the executable file of AutoHotKeysUX.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/268a805b-a9fb-4686-b0fa-0ec25dbd250b" width = 550 height="350">
 </p>
 
-Click on 'Get Roi-Background mean gray differences'. You will be asked to select an empty folder where some masks will be saved. These can be used later for some sanity checks. 
+Click on 'Get Roi-Background mean gray differences'. You will be asked to select an empty folder where Fiji will communicate with AResCoN during the process. Eventually, images of convex hulls will remain in this folder. You can use them later as sanity checks. Each convex hull is a region created based on the external boundaries of the more distant cells from all directions. ROIs are 'burned' into each sanity check image so that you can see whether the convex hull has been created appropriately. Ignore erroneous ROIs that might be outside the convex hull and are derived by erroneous detections of Cellpose but be suspicious if many ROIs are outside the convex hull (which would mean that your slice was not successfuly contrasted to the background of the image). 
 
 Let Fiji run uninterruptedly like step 6. This step will take longer than step 6 and 8. How much longer? This really depends on the number of ROIs that each image has. It might take a couple of minutes -or more- per plane for images with many thousands of ROIs.
 
