@@ -177,7 +177,11 @@ Find the 2D filter tab and type a ROI enlargement factor (I like a value of 2). 
 </p>
 
 Click on 'Get Roi-Background mean gray differences'. You will be asked to select an empty folder where Fiji will communicate with AResCoN during the process. 
-* Eventually, images of convex hulls will remain in this folder. You can use them later as sanity checks. Each convex hull is a region created based on the external boundaries of the more distant cells from all directions. ROIs are 'burned' into each sanity check image so that you can see whether the convex hull has been created appropriately. Ignore erroneous ROIs that might be outside the convex hull and are derived by erroneous detections of Cellpose but be suspicious if many ROIs are outside the convex hull (which would mean that your slice was not successfuly contrasted to the background of the image). 
+* Eventually, images of convex hulls will remain in this folder. You can use them later as sanity checks. Each convex hull is a region created based on the external boundaries of the more distant cells from all directions, yet still inside your slice (and not any contingent misdetected ROIs. in the background of the slice). ROIs are 'burned' into each sanity check image so that you can see whether the convex hull has been created appropriately. Ignore erroneous ROIs that might be outside the convex hull and are derived by erroneous detections of Cellpose but be suspicious if many ROIs are outside the convex hull (which would mean that your slice was not successfuly contrasted to the background of the image).
+* If you convex hulls are not created properly, then you will have to tweak the code for background detection that takes place inside the RunMeanMeasurements.py module.
+** setOption("ScaleConversions", true);
+run("Gaussian Blur...", "sigma=10");
+run("Auto Threshold", "method=MinError(I) white");
 
 Let Fiji run uninterruptedly like step 6. This step will take longer than step 6 and 8. How much longer? This really depends on the number of ROIs that each image has. It might take a couple of minutes -or more- per plane for images with many thousands of ROIs.
 
