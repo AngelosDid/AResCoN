@@ -121,7 +121,7 @@ You can find the RoisFromLabels folder inside the subdirectories of the main ROI
 
 ## Step 5 (Set the right Fiji measurements)
 
-In Fiji Menu bar type 'set measurements' and make sure those measurements are selected : 
+In Fiji Menu bar type 'set measurements' and make sure the Area, Standard deviation, min and max grey value, Limit to threshold and Display Labels are selected (I personally have opted for more but you dont need them and it will cost time) : 
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/afe4b992-15e6-4836-b3a6-81cb9ae01a51" height="350">
@@ -170,13 +170,14 @@ Steps 7,8 and 9 in one image :
 
 ⚠️ Warning : This step might differ from the youtube tutorial. Changes have been made to the way this function works in order to minimize processing time.
 
-Find the 2D filter tab and type a ROI enlargement factor (I like a value of 2).  For a value of 2, this factor means that you are taking as a background field the space of a double sized bounding box of each cell of yours. Press the 'Locate .ahk' button and select the autoenter.ahk inside the AResCoN code folder. After installing the AutoHotKeysUX, press the 'Locate' .exe button and select the executable file of AutoHotKeysUX.
+Find the 2D filter tab and type a ROI enlargement factor (I like a value of 2). For a value of 2, this factor means that you are taking as a background field the space of a double sized bounding box of each cell of yours. Press the 'Locate .ahk' button and select the autoenter.ahk inside the AResCoN code folder. After installing the AutoHotKeysUX, press the 'Locate' .exe button and select the executable file of AutoHotKeysUX.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/268a805b-a9fb-4686-b0fa-0ec25dbd250b" width = 550 height="350">
 </p>
 
-Click on 'Get Roi-Background mean gray differences'. You will be asked to select an empty folder where Fiji will communicate with AResCoN during the process. Eventually, images of convex hulls will remain in this folder. You can use them later as sanity checks. Each convex hull is a region created based on the external boundaries of the more distant cells from all directions. ROIs are 'burned' into each sanity check image so that you can see whether the convex hull has been created appropriately. Ignore erroneous ROIs that might be outside the convex hull and are derived by erroneous detections of Cellpose but be suspicious if many ROIs are outside the convex hull (which would mean that your slice was not successfuly contrasted to the background of the image). 
+Click on 'Get Roi-Background mean gray differences'. You will be asked to select an empty folder where Fiji will communicate with AResCoN during the process. 
+* Eventually, images of convex hulls will remain in this folder. You can use them later as sanity checks. Each convex hull is a region created based on the external boundaries of the more distant cells from all directions. ROIs are 'burned' into each sanity check image so that you can see whether the convex hull has been created appropriately. Ignore erroneous ROIs that might be outside the convex hull and are derived by erroneous detections of Cellpose but be suspicious if many ROIs are outside the convex hull (which would mean that your slice was not successfuly contrasted to the background of the image). 
 
 Let Fiji run uninterruptedly like step 6. This step will take longer than step 6 and 8. How much longer? This really depends on the number of ROIs that each image has. It might take a couple of minutes -or more- per plane for images with many thousands of ROIs.
 
