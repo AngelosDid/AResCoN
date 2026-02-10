@@ -178,22 +178,24 @@ Find the 2D filter tab and type a ROI enlargement factor (I like a value of 2). 
 
 Click on 'Get Roi-Background mean gray differences'. You will be asked to select an empty folder where Fiji will communicate with AResCoN during the process. 
 * Eventually, images of convex hulls will remain in this folder. You can use them later as sanity checks. Each convex hull is a region created based on the external boundaries of the more distant cells from all directions, yet still inside your slice (and not any contingent misdetected ROIs. in the background of the slice). ROIs are 'burned' into each sanity check image so that you can see whether the convex hull has been created appropriately. Ignore erroneous ROIs that might be outside the convex hull and are derived by erroneous detections of Cellpose but be suspicious if many ROIs are outside the convex hull (which would mean that your slice was not successfuly contrasted to the background of the image).
-* If you convex hulls are not created properly, then you will have to tweak the code for background detection that takes place inside the RunMeanMeasurements.py module.
-** setOption("ScaleConversions", true);
-run("Gaussian Blur...", "sigma=10");
-run("Auto Threshold", "method=MinError(I) white");
+* If you convex hulls are not created properly, then you will have to tweak the code for threshold-based background detection that takes place inside the RunMeanMeasurements.py module. You can experiment with the different methods that Fiji offers, open macro recorder and see the underlying code so that you replace the default code below (Note that you don't have to reduce your particles to 1. As long as your slice is the largest particle after thresholding, the rest of the script will work fine).
+  
+  ```bash
+   setOption("ScaleConversions", true);
+  run("Gaussian Blur...", "sigma=10");
+  run("Auto Threshold", "method=MinError(I) white");
+  ```
 
 Let Fiji run uninterruptedly like step 6. This step will take longer than step 6 and 8. How much longer? This really depends on the number of ROIs that each image has. It might take a couple of minutes -or more- per plane for images with many thousands of ROIs.
 
-Eventually, two more columns will be added to each csv file inside the subdirectories of the save folder, where your main measurements are stored. The most important new column is the SurroundingMean, which is the relative background of each corresponding ROI. This background **DOES NOT** take into account pixel values of other ROIs falling under this enlarged region. It also does not take into account the real black background behind the tissue, which is adjacent to neurons that lay in the very outrer cortical parts.
+Eventually, two more columns will be added to each csv file inside the subdirectories of the save folder, where your main measurements are stored. The most important new column is the SurroundingMean, which is the relative background of each corresponding ROI. This background **DOES NOT** take into account pixel values of other ROIs falling under this enlarged region. It also does not take into account the real black background behind the tissue, which is adjacent to neurons that lay in the very outrer cortical parts. Hence, this is background is more reliable than other methods.
 
 
 
 ## Step 11(Filter ROIs in XY axis) 
 
 
-
-You can make your own ROI filters by inserting conditions based on the metrics/measurements that are included in your csv files. For instance, you can exclude all ROIs that are less than 30% brighter than their background by typing (Mean>SurroundingMean*1.3). You can include any other condition (always inside parenthesis) that you want, as long as you don't repeat the name of a metric inside the same condition. If any of the conditions is violated, the ROI will be filtered out.
+You can make your own ROI filters by inserting conditions based on the metrics/measurements that are included in your csv files. For instance, you can exclude all ROIs that are less than 30% brighter than their background by typing (Mean>SurroundingMean*1.3). You can include any other condition (always inside parenthesis) that you want, as long as you don't repeat the name of a metric inside the same condition (you can still factorize if you want). If any of the conditions is violated, the ROI will be filtered out.
 
 💡 IMPORTANT : The ROIs that displayed NaN value during the calculation of the relative background have artificially been given the value 0.000001 under the SurroundingMean column. These are mostly false ROIs detected outside the tissue, somewhere in the black background of the image. It is **highly** recommended to also add the (SurroundingMean>0.000001) condition in the filters, to ensure that no such ROIs will be included in your final set.
 
