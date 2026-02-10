@@ -1,3 +1,0 @@
-(FeretX>300 and 600>FeretY>500) or (Area>400)
-
-(Mean > SurroundingMean*1.5)
