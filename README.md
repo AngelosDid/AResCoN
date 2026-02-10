@@ -55,14 +55,16 @@ Create a main Rois_Folder and then create as many planeN_Images subdirectories a
 
 ## Step 3 (Convert masks to ROIs)
 
-⚠️ Warning: Sometimes, hidden desktop.ini files might be included inside your directories. AResCoN is not accounting for these files yet. You can ensure that you directory has no hidden desktop files if you : open file explorer -> click the three dots next to view (Windows 11), -> options -> view -> hide protected operating system files -> delete all desktop.ini files that might be inside every plane folder. Alternatively you can : 
+⚠️ Warning: Sometimes, hidden desktop.ini files might be included inside your directories. AResCoN is not accounting for these files yet. You can ensure that you directory has no hidden desktop files if you : open file explorer -> click the three dots next to view (Windows 11), -> options -> view -> hide protected operating system files -> delete all desktop.ini files that might be inside every plane folder. 
+
+Alternatively you can : 
 
 ```bash
 cd "C:\Users\YourAccount\Desktop\ROIs folder"
 del /s /a desktop.ini"
 ```
 
-Run Cellpose inferences and paste each .tif mask output to the respective planeN subdirectory of a main ROIs folder. For instance, if there are 2 multistacks of brain a and brain b, both comprising 5 planes, plane1_ROIs must contain a_plane1.tif and b_plane1.tif, plane2_ROIs must contain a_plane2.tif and b_plane2.tif and so on.
+Next: Run Cellpose inferences and paste each .tif mask output to the respective planeN subdirectory of a main ROIs folder. For instance, if there are 2 multistacks of brain a and brain b, both comprising 5 planes, plane1_ROIs must contain a_plane1.tif and b_plane1.tif, plane2_ROIs must contain a_plane2.tif and b_plane2.tif and so on.
 
 The names of the .tif masks must be **identical** to the names of the initial _planeN.tif images. The provided Cellpose notebook will add an additional _predicted_mask to each mask output name (unless you remove it directly from the notebook). Remove this additional "_predicted_mask" part from all images. You can do this from cmd or much more easily with tools like PowerRename.
 
