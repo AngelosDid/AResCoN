@@ -27,6 +27,8 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
   
 * An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one)
 
+⚠️ Disclaimer : During the stages of Fiji/ImageJ initiation and measurements, AResCoN uses a python library that simulates keystrokes and clicks. If an error occurs and Fiji stops, the list of keystroke commands will continue, unless you terminate AResCoN itself (and not Fiji). The delete button is delibarately replaces with backspace during these commands, to ensure safety of all files. It is recommended to test AResCoN in a safe environment.
+
 
 ## Step 0 (Getting ready)
 
