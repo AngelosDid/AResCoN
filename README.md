@@ -74,7 +74,7 @@ If you aren't using planes from small multistacks and are only interested in fil
   <img src="https://github.com/user-attachments/assets/aa93acc5-e427-456e-981d-6b21afbce24c" width="700">
 </p>
 
-After you ensure that the architecture is correct, open the AResCoN code folder with VS code and run the Multiplane_cell_detection17.py. A GUI window will open. 
+After you ensure that the architecture is correct, open the AResCoN code folder with VS code and run the main.py. A GUI window will open. 
 
 Click at the Microscopy tab and make sure that the number of zplanes corresponds to your maximum z-plane. 
 
