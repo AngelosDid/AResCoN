@@ -21,14 +21,12 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
 
 * AResCoN has recently been fixed to accomodate multistack images comprising more than 9 planes. It is now also able to process multistack images comprising a different number of planes (e.g. a multistack of 6 planes and a multistack of 12 planes).
   
-* The steps that include openning of Fiji require that you do not press your keyboard or move your mouse. Therefore, it is recommended that you don't run AResCoN in your main desktop.
-
 * Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji. Other versions will probably not work unless you adjust the number of tab presses in the pyautogui in all modules where fiji is called.
   
 * An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one)
 
 
-⚠️ Disclaimer : During the stages of Fiji/ImageJ initiation and measurements, AResCoN uses a python library that simulates keystrokes and clicks. If an error occurs and Fiji stops, the list of keystroke commands will continue (pressing tab, pressing enter and some typing) unless you terminate AResCoN itself (and not Fiji). The delete button is delibarately replaced with backspace during these commands, to ensure safety of all files. It is recommended to test AResCoN in a safe environment first.
+⚠️ Disclaimer : During the stages of Fiji/ImageJ initiation and measurements, AResCoN uses a python library that simulates keystrokes and clicks. During these steps, it is required that you do not press your keyboard or move your mouse. If an error occurs and Fiji stops working, the list of keystroke commands (pressing tab, pressing enter and some typing) will continue if you close Fiji menu unless you terminate AResCoN itself first. Therefore, in case you encounter an error, you should first close AResCoN. To ensure safety of all files, the delete button is delibarately replaced with backspace in the keystroke commands. However, it is recommended to test AResCoN in a safe environment first. 
 
 
 ## Step 0 (Getting ready)
