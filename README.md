@@ -23,10 +23,17 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
   
 * Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji. Other versions will probably not work unless you adjust the number of tab presses in the pyautogui in all modules where fiji is called.
   
-* An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one)
+* An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one).
+  
+* If your PC needs much time to open Fiji, it is likely that you will encounter errors during the initiation steps of Fiji (read the disclaimer below). Time the seconds needed for your Fiji to open and ensure that your Fiji opens in less than 8 seconds. If the minimum value of 8 seconds is not sufficient, you can change yourself this limit inside the code. Open all modules starting with the word Run (RunFijiMeasurements.py,RunReducedRois.py,RunMeanMeasurements.py,RunVisualTests.py), look for the command below and replace the value (or, the variable corresponding to a value) in the time.sleep(). In this case, your PC will wait 8 seconds after the initialisation of Fiji, to ensure that Fiji is open (the next version of AResCoN will allow you to insert your value into a designated field under the main tab). 
+
+```bash
+  subprocess.Popen([fiji_path])
+  time.sleep(8) 
+```
 
 
-⚠️ Disclaimer : During the stages of Fiji/ImageJ initiation and measurements, AResCoN uses a python library that simulates keystrokes and clicks. During these steps, it is required that you do not press your keyboard or move your mouse. If an error occurs and Fiji stops working, the list of keystroke commands (pressing tab, pressing enter and some typing) will continue if you close Fiji menu unless you terminate AResCoN itself first. Therefore, in case you encounter an error, you should first close AResCoN. To ensure safety of all files, the delete button is delibarately replaced with backspace in the keystroke commands. However, it is recommended to test AResCoN in a safe environment first. 
+⚠️ Disclaimer : During the stages of Fiji/ImageJ initialisation and measurements, AResCoN uses a python library that simulates keystrokes and clicks. During these steps, it is required that you do not press your keyboard or move your mouse. If an error occurs and Fiji stops working, the list of keystroke commands (pressing tab, pressing enter and some typing) will continue if you close Fiji menu unless you terminate AResCoN itself first. Therefore, in case you encounter an error, you should first close AResCoN. To ensure safety of all files, the delete button is delibarately replaced with backspace in the keystroke commands. However, it is recommended to test AResCoN in a safe environment first. 
 
 
 ## Step 0 (Getting ready)
