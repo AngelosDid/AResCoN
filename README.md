@@ -25,11 +25,11 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
   
 * An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one).
   
-* If your PC needs much time to open Fiji, it is likely that you will encounter errors during the initiation steps of Fiji (read the disclaimer below). Time the seconds needed for your Fiji to open and ensure that your Fiji opens in less than 8 seconds. If the minimum value of 8 seconds is not sufficient, you can change yourself this limit inside the code. Open all modules starting with the word Run (RunFijiMeasurements.py,RunReducedRois.py,RunMeanMeasurements.py,RunVisualTests.py), look for the command below and replace the value (or, the variable corresponding to a value) in the time.sleep(). In this case, your PC will wait 8 seconds after the initialisation of Fiji, to ensure that Fiji is open (the next version of AResCoN will allow you to insert your value into a designated field under the main tab). 
+* If your PC needs much time to open Fiji, it is likely that you will encounter errors during the initiation steps of Fiji (read the disclaimer below). Time the seconds needed for your Fiji to open and ensure that your Fiji opens in less than 13 seconds. If the minimum value of 13 seconds is not sufficient, you can change yourself this limit inside the code. Open all modules starting with the word Run -> (RunFijiMeasurements.py,RunReducedRois.py,RunMeanMeasurements.py,RunVisualTests.py) as well as the modules ConvertLabelsToRois.py and EntropyMeasurements.py, look for the command below and replace the value (or, the variable corresponding to a value) in the time.sleep(). In this case, your PC will wait 13 seconds after the initialisation of Fiji, to ensure that Fiji is fully loaded (the next version of AResCoN will allow you to insert your value into a designated field under the main tab). 
 
 ```bash
   subprocess.Popen([fiji_path])
-  time.sleep(8) 
+  time.sleep(13) 
 ```
 
 
