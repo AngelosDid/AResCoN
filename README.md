@@ -17,11 +17,11 @@ AResCoN is particularly useful in setups where complete imaging of a 2D slice (o
   
 * AResCon receives only one channel input at at time. If you have more than one channels, you should run each separately.
   
-* For a complete utilization of its features, it requires images from small multi-stacks (usually comprising up to 10 planes). Due to the (1) wiggly nature of a mounted tissue (2) the slightly different depth of cells and nuclei populating it (3) inconsistencies in slice thickness- the acquisition of several planes can secure at least one crisp capture of each cell-nucleus across many planes. AReScON can filter out Cellpose predictions that are detected over separate planes and correspond to the same observation. 
+* For a complete utilization of its features, it requires images from small multi-stacks (usually comprising up to 10 planes). Due to the (1) wiggly nature of a mounted tissue (2) the slightly different depth of cells and nuclei populating it (3) inconsistencies in slice thickness, the acquisition of several planes can secure at least one crisp capture of each cell/nucleus across many planes. AResCoN can filter out Cellpose predictions that are detected over separate planes and correspond to the same observation. 
 
 * AResCoN has recently been fixed to accomodate multistack images comprising more than 9 planes. It is now also able to process multistack images comprising a different number of planes (e.g. a multistack of 6 planes and a multistack of 12 planes).
   
-* Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji. Other versions will probably not work unless you adjust the number of tab presses in the pyautogui in all modules where fiji is called.
+* Please use the Fiji/ImageJ version provided in this repository. Do not update Fiji! Other versions will probably not work unless you adjust the number of tab presses in the pyautogui in all modules where fiji is called.
   
 * An installation of AutoHotKeysUX is necessary (https://www.autohotkey.com/  v2 and not the depracated one).
   
