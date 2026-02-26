@@ -42,7 +42,7 @@ Install Anaconda or Miniconda. Open the Anaconda prompt, locate the directory wh
 ```bash
 conda env create -f AResCoN_dependencies.yaml
 ```
-
+You can use the uploaded AResCoN code (which you can find above). I recommend not using the code from 1st release (which you can find on your right), since updates are being made frequently. However, if you come across any unexpected errors, you can switch to the code of 1st release AND the respective cellpose sheet for inferences in Google Colab.
 
 ## Step 1 (Get independent planes)
 
