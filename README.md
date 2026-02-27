@@ -209,7 +209,7 @@ You can make your own ROI filters by inserting conditions based on the metrics/m
 
 There is a catch here though: When we converted masks to ROIs (step3) any contingent spatial gap between overlapping ROIs is now lost. This means that if a neurons is **completely** surrounded by other neurons throughout the whole range of its enlarged form (see step 10), then there will be no unmasked pixel values to calculate the SurroundingMean (unless the enlargment factor had created a space that goes beyond the adjacent cells and included at least one free pixel). This will erroneously lead to a 0.000001 value. This is naturally almost impossible, however, Cellpose makes some really false predictions from time to time which occupy a very large space in the image. The indicated by the red arrow cell in the example below will be 'trapped' and might erroneously acquire a NaN -> 0.000001 value. 
 
-🆕 The new Cellpose_inferences_notebook.ipynb (from 26 February 2026 and onwards) filters rois based on minimum a size (25 pixels) which you can change, as well as based on an arbitrary maximum size, defined as 3 times the average size of all detected ROIs. This ensures removal of strange large ROIs.
+🆕 The new Cellpose_inferences_notebook.ipynb (uploaded on 26 February 2026 or later) filters rois based on minimum a size (25 pixels) which you can change, as well as based on an arbitrary maximum size, defined as 3 times the average size of all detected ROIs. This ensures removal of strange large ROIs.
 
 
 
