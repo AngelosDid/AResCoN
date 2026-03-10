@@ -230,6 +230,8 @@ Navigate to Zfilter tab and press 'Apply filters'. Then select your newly create
 
 So far, I have detected a few negligible cases where some false positives survive the filtering, thereby leading to erroneous 'double' detection of a neuron. You can easily investigate yourself by overlaying the rois in the image. Notwithstanding that there will probably be no reason for tweaking the filtering values, you can refer to the decisiontree.pptx inside the AResCoN code and see which value corresponds to each step of the designed algorithm. I will provide a more descriptive explanation about this in the future.
 
+For each zip file created, you will also find a respective excel file that lists the accepted and rejected ROIs of z-filtering. The node, as well as the condition where the inclusion or exclusion took place is also indicated. You can navigate to the project folder and find the decision trees for nuclear and cellular signal. Use the nodes of the nuclear decision tree to understand the exact condition that led to exclusion or inclusion of a ROI. Of note, an additional recursive function for further removal of ROIs engulfing smaller ROIs is applied for nuclear signal.
+
 
 # Final zip file
 
