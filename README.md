@@ -44,6 +44,8 @@ conda env create -f AResCoN_dependencies.yaml
 ```
 You can use the uploaded AResCoN code (which you can find above). I recommend not using the code from 1st release (which you can find on your right), since updates are being made frequently. However, if you come across any unexpected errors, you can switch to the code of 1st release AND the respective cellpose sheet for inferences in Google Colab. After you install the environment, locate the main.py file and run the code. The GUI of AResCoN should open!
 
+🆕 You can also try using the beta executable version of AResCoN. Navigate to https://archive.org/details/arescon-executable , download the zip file, open the dist folder and run the main.exe. After a few seconds, the GUI of AResCoN should open! Kindly keep in mind that the executable version hasn't been thoroughly tested.
+
 ## Step 1 (Get independent planes)
 
 Use the 'Stack to Images' ImageJ function and save separately each plane. Images **must end** to _plane1.tif, _plane2.tif and so on. Make sure that each plane includes only a single channel.
