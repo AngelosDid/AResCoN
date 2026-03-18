@@ -42,7 +42,7 @@ Install Anaconda or Miniconda. Open the Anaconda prompt, locate the directory wh
 ```bash
 conda env create -f AResCoN_dependencies.yaml
 ```
-You should always use the latest version of AResCoN code (see latest release). I recommend not using the code from 1st release (which you can find on your right), since many updates have been made recently. If you are using Cellpose, ensure that you use the attached collab notebook which you can find at Arescon\Extra info you might need\Colab Notebook. After you install the environment, locate the main.py file and run the code. The GUI of AResCoN should open!
+You should always use the latest version of AResCoN code (see [latest release] (https://github.com/AngelosDid/AResCoN/releases)). I recommend not using the code from 1st release (which you can find on your right), since many updates have been made recently. If you are using Cellpose, ensure that you use the attached collab notebook which you can find at Arescon\Extra info you might need\Colab Notebook. After you install the environment, locate the main.py file and run the code. The GUI of AResCoN should open!
 
 🆕 You can also try using the beta executable version of AResCoN. Navigate to https://archive.org/details/arescon-executable , download the zip file, open the dist folder and run the main.exe. After a few seconds, the GUI of AResCoN should open! Kindly keep in mind that the executable version hasn't been thoroughly tested.
 
