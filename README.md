@@ -44,7 +44,9 @@ conda env create -f AResCoN_dependencies.yaml
 ```
 You should always use the latest version of AResCoN code (see https://github.com/AngelosDid/AResCoN/releases). Only use the 1st release to download the appropriate Fiji version which AResCoN works with. All releases work based on this Fiji version.
 
-If you are using Cellpose, ensure that you use the attached collab notebook which you can find at Arescon\Extra info you might need\Colab Notebook. After you install the environment, locate the main.py file and run the code. The GUI of AResCoN should open!
+If you are using Cellpose, ensure that you use the attached collab notebook which you can find inside Arescon\Extra info you might need\Colab Notebook (this is part of the arescon zip file). 
+
+After you install the environment, locate the main.py file and run the code. The GUI of AResCoN should open!
 
 🆕 You can also try using the beta executable version of AResCoN. Navigate to https://archive.org/details/arescon-executable , download the zip file, open the dist folder and run the main.exe. After a few seconds, the GUI of AResCoN should open! Kindly keep in mind that the executable version hasn't been thoroughly tested.
 
