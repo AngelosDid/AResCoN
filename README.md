@@ -7,7 +7,7 @@ AResCoN can also :
 
 * Detect overlaps between two channels.
 * Map ROIs to subregions based on manually designated subregions.
-* Be used as a tool for ROI manipulation (such as converting inferences of labelled masks to ROIs, or merging ROIs inferred from raw and pre-processed images.
+* Be used as a tool for ROI manipulation (such as converting inferences of labelled masks to ROIs, or merging ROIs inferred from raw and pre-processed images).
 
 ## 📋 Prerequisites
 
