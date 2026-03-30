@@ -60,7 +60,9 @@ After you install the environment, locate the main.py file and run the code. The
 
 Use the 'Stack to Images' ImageJ function and save separately each plane. Images **must end** to _plane1.tif, _plane2.tif and so on. Make sure that each plane includes only a single channel.
 
-Alternatively, if your original images are multistack AND multichannel images, you can navigate the fiji macros folder inside AResCoN code and use the SeparateMultiplaneForBatchMacro.txt. You can copy its content, open Fiji and go to Process->Batch->Macro. Select as input the directory where all your multistack AND multichannel images are. When the first image opens, you will be requested to indicate a folder where each single-channel/single-plane image will be saved. Your directory has to be structured like this: directory/CN/planeN_image where N is the number of your channel (for CN) or plane (for planeN). Therefore, if you have 3 channels and 3 planes, you need to have a C1, C2 and C3 folder; inside of each a plane1_images, plane2_images, plane3_images folder. All CN and planeN directories must be empty (This macro will be incorporated to AResCoN in a new version). 
+Alternatively, if your original images are multistack AND multichannel images, you can navigate the Change ROIs tab and click at the Split channels & labels button. Select as input the directory where all your multistack AND multichannel images are (images must be both multichannel and multiplane). You will then be requested to indicate a folder where each single-channel/single-plane image will be saved. 
+
+Your save directory has to be structured like this: directory/CN/planeN_Images where N is the number of your channel (for CN) or plane (for planeN). Therefore, if you have 3 channels and 3 planes, you need to have a C1, C2 and C3 folder; inside of each a plane1_Images, plane2_Images, plane3_Images folder. All planeN directories must be empty. 
 
 
 ## Step 2 (Paste images to corresponding planeN folder)
