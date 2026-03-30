@@ -3,6 +3,12 @@ AResCoN is a pipeline developed to perform accurate filtering of cells or nuclei
 
 AResCoN is particularly useful in setups where complete imaging of a 2D slice (one hemishpere or both) is required but it can also be used for isolated regions within a 2D slice. 
 
+AResCoN can also :
+
+* Detect overlaps between two channels.
+* Map ROIs to subregions based on manually designated subregions.
+* Be used as a tool for ROI manipulation (such as converting inferences of labelled masks to ROIs, or merging ROIs inferred from raw and pre-processed images.
+
 ## 📋 Prerequisites
 
 * A primary output of Cellpose (recommended) or Stardist (only for no z-axis filtering) is required. You can find notebooks for training/predictions on Cellpose github page. A notebook for predictions is also attached here.
