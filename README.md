@@ -265,7 +265,7 @@ Step 13 (Map ROIs to subregions)
 
 Open ROI manager in Fiji and draw the subregions of interest. Select all subregions and save the RoiSet.zip. Rename your file using the same name of the zip file with cell or nuclei ROIs but place it in another folder to avoid overwriting it. In AResCoN :
 
-Navigate to the Subregions tab and select the folder with your cell (or nucleus) ROIs and the folder with zip files, each one containing subregions. You also need to indicate an empty Save Folder where excel files with subregion counts will be generated for each image. You can also re-generate the ROIs themselves for sanity tests. Lastly, you need to indicate the minimum percentage of a ROI's body that is inside a particular subregion (minimum percentage cannot be less than). If a ROI's body is lying inside a region by a percentage smaller than it, it will not be registered as part of this region.
+Navigate to the Subregions tab and select the folder with your cell (or nucleus) ROIs and the folder with zip files, each one containing subregions. You also need to indicate an empty Save Folder where excel files with subregion counts will be generated for each image. You can also re-generate the ROIs themselves for sanity tests. Lastly, you need to indicate the minimum percentage of a ROI's body that is inside a particular subregion (minimum percentage cannot be less than 51). If a ROI's body is lying inside a region by a percentage smaller than it, it will not be registered as part of this region.
 
 
 ## 
