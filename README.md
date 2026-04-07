@@ -255,9 +255,13 @@ The final zip file contains ROIs that originate from all possible planes, mainta
 
 <img width="2253" height="656" alt="final" src="https://github.com/user-attachments/assets/79b63fce-4f52-4d91-924d-e78df82ccb08" />
 
-# Final results on Youtube
+# AResCoN tutorial on Youtube (old version)
 
 https://youtu.be/fQPcCw8j4ls?t=5792
+
+# 🆕 AResCoN tutorial on Youtube (new version)
+
+https://www.youtube.com/watch?v=fh9M2Wz4bfg&t=2s
 
 ### Optional Additional Steps: 
 
