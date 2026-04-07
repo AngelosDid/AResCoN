@@ -261,8 +261,7 @@ https://youtu.be/fQPcCw8j4ls?t=5792
 
 # 🆕 AResCoN tutorial on Youtube (new version)
 
-https://www.youtube.com/watch?v=fh9M2Wz4bfg&t=2s
-
+https://youtu.be/fh9M2Wz4bfg?si=yyDm2R1YEYh6yS9F
 
 
 
