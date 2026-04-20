@@ -11,7 +11,7 @@ AResCoN can also :
 
 ## 📋 Prerequisites
 
-* A primary output of Cellpose (recommended) or Stardist (only for no z-axis filtering) is required. You can find notebooks for training/predictions on Cellpose github page. A notebook for predictions is also attached here.
+* A primary output of Cellpose (recommended) or Stardist (only for no z-axis filtering) is required. You can find notebooks for training on Cellpose github page but you should use the notebook attached here for Cellpose inferences!
 
 * The naming of the obtained ROIs must be similar to the ROIs provided in the repository, namely 001_001, 001_002, 001_003 and so on. Your ROIs will obtain by default these names if you run the label (mask) to ROI conversion option in AResCoN.
 
