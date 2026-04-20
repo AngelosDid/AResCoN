@@ -62,14 +62,14 @@ After you install the environment, locate the main.py file and run the code. The
 
 Use the 'Stack to Images' ImageJ function and save separately each plane. Images **must end** to _plane1.tif, _plane2.tif and so on. Make sure that each plane includes only a single channel.
 
-Alternatively, if your original images are multistack AND multichannel images, you can navigate the Change ROIs tab and click at the Split channels & labels button. Select as input the directory where all your multistack AND multichannel images are (images must be both multichannel and multiplane). You will then be requested to indicate a folder where each single-channel/single-plane image will be saved. 
+Alternatively, if your original images are multistack AND multichannel images, you can navigate the Change ROIs tab and click at the Split channels & planes button. Select as input the directory where all your multistack AND multichannel images are (images must be both multichannel and multiplane). You will then be requested to indicate a folder where each single-channel/single-plane image will be saved. 
 
 Your save directory has to be structured like this: directory/CN/planeN_Images where N is the number of your channel (for CN) or plane (for planeN). Therefore, if you have 3 channels and 3 planes, you need to have a C1, C2 and C3 folder; inside of each a plane1_Images, plane2_Images, plane3_Images folder. All planeN directories must be empty. 
 
 
 ## Step 2 (Paste images to corresponding planeN folder)
 
-Unless you used the Split channels & labels button, you'll need to create a main Rois_Folder and then create as many planeN_Images subdirectories as the maximum plane that you have. For instance, if brain a consists of 4 planes and brain b of 5, then create 5 planeN subdirectories, where N corresponds to a number from 1 to 5. plane1_images must contain a_plane1.tif and b_plane1.tif , plane2_images must contain a_plane2.tif and b_plane2.tif and so on.
+Unless you used the Split channels & planes button, you'll need to create a main Rois_Folder and then create as many planeN_Images subdirectories as the maximum plane that you have. For instance, if brain a consists of 4 planes and brain b of 5, then create 5 planeN subdirectories, where N corresponds to a number from 1 to 5. plane1_images must contain a_plane1.tif and b_plane1.tif , plane2_images must contain a_plane2.tif and b_plane2.tif and so on.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0dcfdb38-6ed3-4316-ae5a-735196c7b6da" width="700">
