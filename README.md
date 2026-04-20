@@ -69,7 +69,7 @@ Your save directory has to be structured like this: directory/CN/planeN_Images w
 
 ## Step 2 (Paste images to corresponding planeN folder)
 
-Unless you used the Split channels & planes button, you'll need to create a main Rois_Folder and then create as many planeN_Images subdirectories as the maximum plane that you have. For instance, if brain a consists of 4 planes and brain b of 5, then create 5 planeN subdirectories, where N corresponds to a number from 1 to 5. plane1_images must contain a_plane1.tif and b_plane1.tif , plane2_images must contain a_plane2.tif and b_plane2.tif and so on.
+Unless you used the Split channels & planes button, you'll need to create a main Rois_Folder and then create as many planeN_Images subdirectories as the maximum plane that you have. For instance, if brain a consists of 4 planes and brain b of 5, then create 5 planeN subdirectories, where N corresponds to a number from 1 to 5. plane1_images must contain IDa_plane1.tif and IDb_plane1.tif , plane2_images must contain IDa_plane2.tif and IDb_plane2.tif and so on.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0dcfdb38-6ed3-4316-ae5a-735196c7b6da" width="700">
