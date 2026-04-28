@@ -210,6 +210,19 @@ Click on 'Get Roi-Background mean gray differences'. You will be asked to select
   run("Auto Threshold", "method=MinError(I) white");
   ```
 
+* In rare occassions, a Fiji error occurs ("8-bit binary image required") when using another desktop to run this step. I haven't had the time to investigate this further, but since the problem is resolved when using another desktop, I recommend using a PC with strong CPU and making sure that the sleep settings are permanently disabled for both plugged and unplugged conditions. Adding a delay of 1 or 2 seconds before the run ("Fill Holes") command in line 85 of RunMeanMeasurements.py might also help solve the problem. You can add a delay of two seconds by typing :
+   ```bash
+  ...
+  run("Auto Threshold", "method=MinError(I) white");
+  wait(2000);
+  run("Fill Holes");
+  ...
+  ```
+
+  <img width="1080" height="1920" alt="WhatsApp Image 2026-04-24 at 16 40 07" src="https://github.com/user-attachments/assets/d9afe17b-177e-464f-a5c9-ef731517358a" />
+
+
+
 Let Fiji run uninterruptedly like step 6. This step will take longer than step 6 and 8. How much longer? This really depends on the number of ROIs that each image has. It might take a couple of minutes -or more- per plane for images with many thousands of ROIs.
 
 Eventually, two more columns will be added to each csv file inside the subdirectories of the save folder, where your main measurements are stored. The most important new column is the SurroundingMean, which is the relative background of each corresponding ROI. This background **DOES NOT** take into account pixel values of other ROIs falling under this enlarged region. It also does not take into account the real black background behind the tissue, which is adjacent to neurons that lay in the very outrer cortical parts. Hence, this is background is more reliable than other methods.
