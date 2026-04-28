@@ -219,7 +219,7 @@ Click on 'Get Roi-Background mean gray differences'. You will be asked to select
   ...
   ```
 
-  <img width="300" height="600" alt="WhatsApp Image 2026-04-24 at 16 40 07" src="https://github.com/user-attachments/assets/d9afe17b-177e-464f-a5c9-ef731517358a" />
+  <img width="300" height="400" alt="WhatsApp Image 2026-04-24 at 16 40 07" src="https://github.com/user-attachments/assets/d9afe17b-177e-464f-a5c9-ef731517358a" />
 
 
 
