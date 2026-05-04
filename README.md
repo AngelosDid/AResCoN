@@ -210,7 +210,7 @@ Click on 'Get Roi-Background mean gray differences'. You will be asked to select
   run("Auto Threshold", "method=MinError(I) white");
   ```
 
-* In rare occassions, a Fiji error occurs ("8-bit binary image required"). I haven't had the time to investigate this further, but this error can be misleading since it usually originates from a single image but keeps popping up for upcoming images, theby giving the impression that is an error of all images. Until the issue is resolved, you'll have to trace the origin image that yields the error and take its information out from the dataset (that is, rois folder, images folder and main measurements.csv files). The problem is probably a result of wrong thresholding (see previous paragraph).
+* In rare occassions, a Fiji error occurs ("8-bit binary image required"). I haven't had the time to investigate this further, but this error can be misleading since it usually originates from a single image but keeps popping up for upcoming images, thereby giving the impression that is an error related to all images. Until the issue is resolved, you'll have to trace the origin image that yields the error and take its information out from the dataset (that is, rois folder, images folder and main measurements.csv files). The problem is probably a result of wrong thresholding (see previous paragraph).
 There is a slim chance that it is also an inability of Fiji to run the Fill holes command after completely finalyzing the threshold first. Adding a delay of 1 or 2 seconds before the run ("Fill Holes") command in line 85 of RunMeanMeasurements.py might also help solve the problem, however that's merely an assumption. You can add a delay of two seconds by typing :
    ```bash
   ...
