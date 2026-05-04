@@ -223,7 +223,7 @@ There is a slim chance that it is also an inability of Fiji to run the Fill hole
 
   <img width="300" height="400" alt="WhatsApp Image 2026-04-24 at 16 40 07" src="https://github.com/user-attachments/assets/d9afe17b-177e-464f-a5c9-ef731517358a" />
 
-If, for whatever reason, you end up having generated the Meanbackgroundresults folder but the SurroundingMean hasn't been created inside the main measurement .csv files, you can manually copy the mean of the Meanbackgroundresults folder for each file and paste it in the respective main measurement .csv file as a new SurroundingMean column. Make sure the number of rows between the Mean of the main measurement file and the Mean of the Meanbackgroundresults (that is, the SurroundingMean) is the same. If not, exclude that file from the dataset completely because something has gone wrong.
+If, for whatever reason, you end up having generated the Meanbackgroundresults folder but the SurroundingMean hasn't been created inside the main measurement .csv files, you can manually copy the mean of the Meanbackgroundresults folder from each file and paste it in the respective main measurement .csv file as a new SurroundingMean column. Make sure the number of rows between the Mean of the main measurement file and the Mean of the Meanbackgroundresults (that is, the SurroundingMean) is the same. If not, exclude that file from the dataset completely because something has gone wrong.
 
 
 
