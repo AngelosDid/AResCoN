@@ -223,17 +223,13 @@ There is a slim chance that it is also an inability of Fiji to run the Fill hole
 
   <img width="300" height="400" alt="WhatsApp Image 2026-04-24 at 16 40 07" src="https://github.com/user-attachments/assets/d9afe17b-177e-464f-a5c9-ef731517358a" />
 
-If, for whatever reason, you end up having generated the Meanbackgroundresults folder but the SurroundingMean hasn't been created inside the main measurement .csv files, you can manually copy the mean of the Meanbackgroundresults folder from each file and paste it in the respective main measurement .csv file as a new SurroundingMean column. Make sure the number of rows between the Mean of the main measurement file and the Mean of the Meanbackgroundresults (that is, the SurroundingMean) is the same. If not, exclude that file from the dataset completely because something has gone wrong.
-
-
-
 
 
 Let Fiji run uninterruptedly like step 6. This step will take longer than step 6 and 8. How much longer? This really depends on the number of ROIs that each image has. It might take a couple of minutes -or more- per plane for images with many thousands of ROIs.
 
 Eventually, two more columns will be added to each csv file inside the subdirectories of the save folder, where your main measurements are stored. The most important new column is the SurroundingMean, which is the relative background of each corresponding ROI. This background **DOES NOT** take into account pixel values of other ROIs falling under this enlarged region. It also does not take into account the real black background behind the tissue, which is adjacent to neurons that lay in the very outrer cortical parts. Hence, this is background is more reliable than other methods.
 
-
+If, for whatever reason, you end up having generated the Meanbackgroundresults folder but the SurroundingMean hasn't been created inside the main measurement .csv files, you can manually copy the mean of the Meanbackgroundresults folder from each file and paste it in the respective main measurement .csv file as a new SurroundingMean column. Make sure the number of rows between the Mean of the main measurement file and the Mean of the Meanbackgroundresults (that is, the SurroundingMean) is the same. If not, exclude that file from the dataset completely because something has gone wrong. Keep in mind that the the lack of a SurroundingMean column inside the main measurements is actually an indication that something has gone wrong. Thereby, after you manually insert the SurroundingMean column, you should check your final results after XY filtering to ensure that there hasn't been a mismatch between a roi (any row inside a main measurement file) and a bounding box roi (any row inside the MeanBackgroundresults folder), which would lead in turn to subsequent mismatches with respect to that image (hence the reason we verify the equal number of rows too).
 
 ## Step 11(Filter ROIs in XY axis) 
 
