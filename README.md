@@ -223,8 +223,9 @@ Keep in mind that the the lack of a SurroundingMean column inside the main measu
 
 ## Step 11(Filter ROIs in XY axis) 
 
-
 You can make your own ROI filters by inserting conditions based on the metrics/measurements that are included in your csv files. For instance, you can exclude all ROIs that are less than 30% brighter than their background by typing (Mean>SurroundingMean*1.3). You can include any other condition (always inside parenthesis) that you want, as long as you don't repeat the name of a metric inside the same condition (you can still factorize if you want). If any of the conditions is violated, the ROI will be filtered out.
+
+Always use the information from the main measurements csv files to adjust (or re-adjust) the filters you want. Avoid re-measuring with Fiji the metrics of the filtered-in or filtered-out rois that this step produces to refine your filters; instead find the corresponding original main measurements for each ROI of interest. Metrics like Circ. can be severely affected by the re-generation of Rois which takes places during this step, which will in turn lead to wrong filtering. 
 
 💡 IMPORTANT : The ROIs that displayed NaN value during the calculation of the relative background have artificially been given the value 0.000001 under the SurroundingMean column. These are mostly false ROIs detected outside the tissue, somewhere in the black background of the image. It is **highly** recommended to also add the (SurroundingMean>0.000001) condition in the filters, to ensure that no such ROIs will be included in your final set.
 
