@@ -281,6 +281,8 @@ Navigate to the Subregions tab and select the folder with your cell (or nucleus)
 
 💡 I have encountered an error at this step when using some desktops. If you get a "BadZipFile" error, this means that either the zip file containing your cell/nucleus ROIs, or the zip file containing your drawn region contours cannot be accessed, possibly due to encoding issues. I recommend running all steps in the same computer to minimize chances of getting this error. If it occurs, you can run a small fiji macro which reads all zip files from one folder and saves them again to another folder (or, if you only have a few images, try to save each roiset manually by openning the zip file in Fiji, pressing ctrl+a in the roi manager to select all ROIs and then save with the same zip filename).
 
+⚠️ Warning : Check the prompt/terminal for potential warnings during this step. If some rois are not recreated properly, they won't be able to be assessed for overlap and will be missing from the final file. See comments of AResCoN_v8 in the releases too.
+
 
 ## 
 AResCoN has been created solely by Angelos Didachos, a 4th-year PhD Candidate in Neuroscience. I am finishing my PhD in August 2026 and then actively looking for a job in the Netherlands or Australia. Kindly cite my work if you are planning to use AResCoN by citing the github page. If you are interested in detection of animal freezing behaviors, check out my other repository, namely EasyFreezy, which utilizes Deeplabcut output to detect reliably freezing spans.
